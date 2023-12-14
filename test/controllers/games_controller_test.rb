@@ -1,5 +1,6 @@
 # test/controllers/games_controller_test.rb
 require 'test_helper'
+require 'devise'
 
 class GamesControllerTest < ActionDispatch::IntegrationTest
   setup do

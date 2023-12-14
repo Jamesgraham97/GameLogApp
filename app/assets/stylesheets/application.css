@@ -1,15 +1,6 @@
 @import "bootstrap";
-
-/* app/assets/stylesheets/application.css */
 /*
  *= require bootstrap
  *= require_tree .
  *= require_self
 */
-
-
-
-.rating {
-    color: #ffcc00; 
-    font-weight: bold;
-  }

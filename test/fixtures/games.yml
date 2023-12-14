@@ -2,5 +2,5 @@ one:
   title: MyString
   platform: MyString
   completed: false
-  review: MyText
-  user_id: 1
+  review: MyText 
+  user: one
