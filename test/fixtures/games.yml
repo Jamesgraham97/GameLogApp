@@ -1,0 +1,6 @@
+one:
+  title: MyString
+  platform: MyString
+  completed: false
+  review: MyText
+  user_id: 1
