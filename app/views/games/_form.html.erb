@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: @game, local: true) do |form| %>
+  <%= form_with(model: @game, local: true, multipart: true) do |form| %>
     <% if @game.errors.any? %>
       <div class="alert alert-danger" id="error_explanation">
         <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -42,6 +42,13 @@
       <div class="col-md-6 mb-3">
         <%= form.label :rating, class: "form-label" %>
         <%= form.number_field :rating, step: 0.1, min: 0, max: 5, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <%= form.label :image, class: "form-label" %>
+        <%= form.file_field :image, class: "form-control" %>
       </div>
     </div>
 

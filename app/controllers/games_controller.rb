@@ -64,6 +64,18 @@ class GamesController < ApplicationController
           return
         end
       end
+      def create_comment
+        @game = Game.find(params[:id])
+        @comment = @game.comments.build(comment_params)
+        @comment.user = current_user
+      
+        if @comment.save
+          redirect_back fallback_location: @game, notice: 'Comment was successfully created.'
+        else
+          render 'show_details'
+        end
+      end
+      
     private
   
     def set_game
@@ -71,8 +83,10 @@ class GamesController < ApplicationController
     end
 
     def game_params
-    params.require(:game).permit(:title, :platform, :completed, :review, :rating)
+    params.require(:game).permit(:title, :platform, :completed, :review, :rating,:image)
      end
-  
+   def comment_params
+    params.require(:comment).permit(:body)
+  end
      end
   

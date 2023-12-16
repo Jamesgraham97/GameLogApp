@@ -22,7 +22,7 @@ gem "turbo-rails"
 
 gem 'sassc-rails'
 
-gem 'turbolinks'
+#gem 'turbolinks'
 
 
 gem 'devise'

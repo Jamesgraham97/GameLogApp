@@ -44,7 +44,10 @@
   <ul class="list-group">
     <% @games.each do |game| %>
       <li class="list-group-item">
-        <%= link_to game.title,game_path(game), class: "text-dark font-weight-bold" %>
+        <%= link_to game.title, game_path(game), class: "text-dark font-weight-bold" %>
+        <% if game.image.attached? %>
+        <%= image_tag game.image, class: "img-thumbnail custom-thumbnail" %>
+        <% end %>
         <div>
           <%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm btn-delete" if current_user == game.user %>
         </div>

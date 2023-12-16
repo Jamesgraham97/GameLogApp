@@ -1,0 +1,7 @@
+<%= form_with(model: [game, Comment.new], url: create_comment_game_path(id: game.id), remote: true, html: { class: 'form' }) do |form| %>
+    <div class="form-group">
+      <%= form.text_area :body, placeholder: 'Add a comment...', class: 'form-control' %>
+    </div>
+    <%= form.submit 'Submit Comment', class: 'btn btn-primary' %>
+  <% end %>
+  

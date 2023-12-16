@@ -12,6 +12,32 @@
   <%= stylesheet_link_tag 'application', 'games', 'data-turbo-track': 'reload' %>
 
   <%= javascript_include_tag 'application' %>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const leaveCommentButtons = document.querySelectorAll(".leave-comment");
+
+    leaveCommentButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            console.log("Leave Comment Button clicked");
+            const gameId = this.dataset.gameId;
+            const commentForm = document.querySelector(`.comment-form[data-game-id="${gameId}"]`);
+            commentForm.style.display = commentForm.style.display === "none" ? "block" : "none";
+        });
+    });
+
+    const viewCommentsButtons = document.querySelectorAll(".view-comments");
+
+    viewCommentsButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            console.log("View Comments Button clicked");
+            const gameId = this.dataset.gameId;
+            const commentSection = document.getElementById(`comments-for-game-${gameId}`);
+            commentSection.style.display = commentSection.style.display === "none" ? "block" : "none";
+        });
+    });
+});
+
+  </script>
 </head>
 
 <body>
